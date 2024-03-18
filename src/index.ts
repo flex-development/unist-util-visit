@@ -3,4 +3,4 @@
  * @module unist-util-visit
  */
 
-export {}
+export type * from './types'
