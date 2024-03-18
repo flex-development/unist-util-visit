@@ -1,0 +1,47 @@
+{
+  "$schema": "https://raw.githubusercontent.com/streetsidesoftware/cspell/main/cspell.schema.json",
+  "allowCompoundWords": true,
+  "caseSensitive": false,
+  "dictionaries": ["@flex-development/unist-util-visit"],
+  "dictionaryDefinitions": [
+    {
+      "name": "@flex-development/unist-util-visit",
+      "path": "./.dictionary.txt"
+    }
+  ],
+  "enableGlobDot": true,
+  "failFast": false,
+  "flagWords": [],
+  "ignorePaths": [
+    "**/*.log",
+    "**/*.snap",
+    "**/*.wasm",
+    "**/.*ignore",
+    "**/.gitconfig",
+    "**/CHANGELOG.md",
+    "**/LICENSE.md",
+    "**/RELEASE_NOTES.md",
+    "**/scratch.*",
+    ".cspell.json",
+    ".dictionary.txt",
+    ".git/",
+    ".husky/_/",
+    ".vscode/settings.json",
+    ".yarn/",
+    "dist/",
+    "patches/",
+    "yarn.lock"
+  ],
+  "ignoreRegExpList": [
+    "/@flex-development\\/.*/",
+    "/from\\s+(['\"]).*\\1/",
+    "import\\(.*\\)"
+  ],
+  "ignoreWords": [],
+  "language": "en-US",
+  "patterns": [],
+  "readonly": true,
+  "useGitignore": true,
+  "usePnP": false,
+  "version": "0.2"
+}
