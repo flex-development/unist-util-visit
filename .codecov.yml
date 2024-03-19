@@ -88,7 +88,4 @@ ignore:
   - '**/index.ts'
 
 profiling:
-  critical_files_paths:
-    - src/utils/compare.ts
-    - src/util.ts
-    - src/visitor.ts
+  critical_files_paths: []
