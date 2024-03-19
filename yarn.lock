@@ -1827,11 +1827,13 @@ __metadata:
     "@html-eslint/parser": "npm:0.24.0"
     "@types/chai": "npm:4.3.12"
     "@types/eslint": "npm:8.56.5"
+    "@types/hast": "npm:3.0.4"
     "@types/is-ci": "npm:3.0.4"
     "@types/mdast": "npm:4.0.3"
     "@types/node": "npm:20.11.28"
     "@types/node-notifier": "npm:8.0.5"
     "@types/unist": "npm:3.0.2"
+    "@types/xast": "npm:2.0.4"
     "@typescript-eslint/eslint-plugin": "npm:7.2.0"
     "@typescript-eslint/parser": "npm:7.2.0"
     "@vates/toggle-scripts": "npm:1.0.0"
@@ -2396,7 +2398,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/hast@npm:^3.0.0":
+"@types/hast@npm:3.0.4":
   version: 3.0.4
   resolution: "@types/hast@npm:3.0.4"
   dependencies:
@@ -2533,6 +2535,15 @@ __metadata:
   version: 13.11.8
   resolution: "@types/validator@npm:13.11.8"
   checksum: 10/27cba3b43d79cff40c57703225944efacb9c4954379640a8f1ba29cdae07f36fc1115deed08dada9f6d7ff09f205540d04c435e27999dc1ce78d26fd3d8867a0
+  languageName: node
+  linkType: hard
+
+"@types/xast@npm:2.0.4":
+  version: 2.0.4
+  resolution: "@types/xast@npm:2.0.4"
+  dependencies:
+    "@types/unist": "npm:*"
+  checksum: 10/41ed740a3deaa8c6aedf3d175ae2291d0bfaa5d56b0fa9d237e972e442364920e21dd63b4a3bfd078027752e681d643145c3e70c1aa02d96ddb20a9a4fc547dc
   languageName: node
   linkType: hard
 

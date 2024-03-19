@@ -31,4 +31,5 @@ unstub
 vates
 vfile
 vitest
+xast
 yarnrc
