@@ -256,7 +256,7 @@ jobs:
           ref: ${{ env.REF }}
       - id: test-files-check
         name: Check for typecheck files
-        uses: andstor/file-existence-action@v2.0.0
+        uses: andstor/file-existence-action@v3.0.0
         with:
           files: '**/__tests__/*.spec-d.ts'
       - id: node
@@ -308,7 +308,7 @@ jobs:
           ref: ${{ env.REF }}
       - id: test-files-check
         name: Check for test files
-        uses: andstor/file-existence-action@v2.0.0
+        uses: andstor/file-existence-action@v3.0.0
         with:
           files: '**/__tests__/*.spec.+(ts|tsx)'
       - id: node
