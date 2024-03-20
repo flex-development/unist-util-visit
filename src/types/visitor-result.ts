@@ -11,6 +11,11 @@ import type ActionTuple from './action-tuple'
 /**
  * Union of values that can be returned from a visitor.
  *
+ * An `Index` is treated as a tuple of `[CONTINUE, Index]`. An `Action` is
+ * treated as a tuple of `[Action]`. Returning a tuple only makes sense if the
+ * `Action` is `SKIP`. When the `Action` is `EXIT`, that action can be returned.
+ * When the `Action` is `CONTINUE`, `Index` can be returned.
+ *
  * @see {@linkcode Action}
  * @see {@linkcode ActionTuple}
  * @see {@linkcode Index}

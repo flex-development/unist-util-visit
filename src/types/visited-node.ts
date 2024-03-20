@@ -11,15 +11,15 @@ import type {
 import type { Node } from 'unist'
 
 /**
- * Collect visited nodes in [`Tree`][1].
+ * Collect visited nodes in [`Tree`][tree].
  *
- * [1]: https://github.com/syntax-tree/unist#tree
+ * [tree]: https://github.com/syntax-tree/unist#tree
  *
  * @see {@linkcode Node}
  * @see {@linkcode Test}
  *
- * @template {Node} Tree - Tree to check
- * @template {Test} [Check=NIL] - Node test
+ * @template {Node} Tree - Tree to traverse
+ * @template {Test} [Check=NIL] - Visited node test
  */
 type VisitedNode<
   Tree extends Node = Node,

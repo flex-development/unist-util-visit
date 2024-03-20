@@ -26,23 +26,27 @@ import type { ActionTuple, Visitor, VisitorResult, Visitors } from './types'
 import { nodelike, nodename, parentlike } from './utils'
 
 /**
- * Visit nodes with ancestral information.
+ * Visit nodes, with ancestral information.
  *
- * This algorithm performs [*depth-first tree traversal*][1] in [*preorder*][2]
- * (**NLR**) and/or [*postorder*][3] (**LRN**), or if `reverse` is given,
- * *reverse preorder* (**NRL**) and/or *reverse postorder* (**RLN**).
+ * This algorithm performs [*depth-first tree traversal*][dft] in
+ * [*preorder*][preorder] (**NLR**) and/or [*postorder*][postorder] (**LRN**),
+ * or if `reverse` is given, *reverse preorder* (**NRL**) and/or *reverse
+ * postorder* (**RLN**). Nodes are handled on [*enter*][enter] during *preorder*
+ * traversals and on [*exit*][exit] during *postorder* traversals.
  *
  * Walking the `tree` is an intensive task. Make use of `visitor` return values
  * whenever possible. Instead of walking `tree` multiple times, walk it once,
- * use [`unist-util-is`][4] to check if a node matches, and then perform
- * different operations.
+ * use [`unist-util-is`][unist-util-is] to check if a node matches, and then
+ * perform different operations.
  *
  * You can change `tree`. See {@linkcode Visitor} for more info.
  *
- * [1]: https://github.com/syntax-tree/unist#depth-first-traversal
- * [2]: https://github.com/syntax-tree/unist#preorder
- * [3]: https://github.com/syntax-tree/unist#postorder
- * [4]: https://github.com/syntax-tree/unist-util-is
+ * [dft]: https://github.com/syntax-tree/unist#depth-first-traversal
+ * [enter]: https://github.com/syntax-tree/unist#enter
+ * [exit]: https://github.com/syntax-tree/unist#exit
+ * [postorder]: https://github.com/syntax-tree/unist#postorder
+ * [preorder]: https://github.com/syntax-tree/unist#preorder
+ * [unist-util-is]: https://github.com/syntax-tree/unist-util-is
  *
  * @see {@linkcode Node}
  * @see {@linkcode Visitors}
@@ -65,38 +69,42 @@ function visit<Tree extends Node = Node>(
 ): void
 
 /**
- * Visit nodes with ancestral information.
+ * Visit nodes, with ancestral information.
  *
- * This algorithm performs [*depth-first tree traversal*][1] in [*preorder*][2]
- * (**NLR**) and/or [*postorder*][3] (**LRN**), or if `reverse` is given,
- * *reverse preorder* (**NRL**) and/or *reverse postorder* (**RLN**).
+ * This algorithm performs [*depth-first tree traversal*][dft] in
+ * [*preorder*][preorder] (**NLR**) and/or [*postorder*][postorder] (**LRN**),
+ * or if `reverse` is given, *reverse preorder* (**NRL**) and/or *reverse
+ * postorder* (**RLN**). Nodes are handled on [*enter*][enter] during *preorder*
+ * traversals and on [*exit*][exit] during *postorder* traversals.
  *
- * You can choose for which nodes `visitor` is called by passing [`test`][4].
- * For complex tests, you should test yourself in `visitor` instead, as it will
- * be faster and will have improved type information.
+ * You can choose which nodes visitor functions handle by passing a
+ * [`test`][test]. For complex tests, you should test yourself in `visitor`
+ * instead, as it will be faster and also have improved type information.
  *
  * Walking the `tree` is an intensive task. Make use of visitor return values
- * whenever possible. Instead of walking `tree` multiple times, walk it once,
- * use [`unist-util-is`][5] to check if a node matches, and then perform
- * different operations.
+ * whenever possible. Instead of walking the `tree` multiple times, walk it
+ * once, use [`unist-util-is`][unist-util-is] to check if a node matches, and
+ * then perform different operations.
  *
  * You can change `tree`. See {@linkcode Visitor} for more info.
  *
- * [1]: https://github.com/syntax-tree/unist#depth-first-traversal
- * [2]: https://github.com/syntax-tree/unist#preorder
- * [3]: https://github.com/syntax-tree/unist#postorder
- * [4]: https://github.com/syntax-tree/unist-util-is#test
- * [5]: https://github.com/syntax-tree/unist-util-is
+ * [dft]: https://github.com/syntax-tree/unist#depth-first-traversal
+ * [enter]: https://github.com/syntax-tree/unist#enter
+ * [exit]: https://github.com/syntax-tree/unist#exit
+ * [postorder]: https://github.com/syntax-tree/unist#postorder
+ * [preorder]: https://github.com/syntax-tree/unist#preorder
+ * [test]: https://github.com/syntax-tree/unist-util-is#test
+ * [unist-util-is]: https://github.com/syntax-tree/unist-util-is
  *
  * @see {@linkcode Node}
  * @see {@linkcode Test}
  * @see {@linkcode Visitors}
  *
  * @template {Node} [Tree=Node] - Tree to traverse
- * @template {Test} [Check=Test] - Node test
+ * @template {Test} [Check=Test] - Visited node test
  *
  * @param {Tree} tree - Tree to traverse
- * @param {Check} test - `unist-util-is` test
+ * @param {Check} test - [`unist-util-is`][unist-util-is]-compatible test
  * @param {Visitor<Tree, Check> | Visitors<Tree, Check>} visitor - A function to
  * handle nodes passing `test` when entering (*preorder*), or an object to
  * handle passing nodes when entering and leaving (*preorder* and *postorder*)
@@ -113,7 +121,7 @@ function visit<Tree extends Node = Node, Check extends Test = Test>(
 ): void
 
 /**
- * Visit nodes with ancestral information.
+ * Visit nodes, with ancestral information.
  *
  * @see {@linkcode Node}
  * @see {@linkcode Test}
@@ -121,7 +129,7 @@ function visit<Tree extends Node = Node, Check extends Test = Test>(
  * @see {@linkcode Visitors}
  *
  * @param {Node} tree - Tree to traverse
- * @param {Test | Visitor | Visitors} test - Node test or `visitor`
+ * @param {Test | Visitor | Visitors} test - Visited node test or `visitor`
  * @param {(Visitor | Visitors | boolean | null)?} [visitor] - A function to
  * handle entering nodes, an object containing functions to handle entering and
  * leaving nodes, or `reverse`

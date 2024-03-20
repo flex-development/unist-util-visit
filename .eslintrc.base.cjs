@@ -1058,6 +1058,7 @@ const config = {
         '@typescript-eslint/no-floating-promises': 0,
         '@typescript-eslint/no-for-in-array': 0,
         '@typescript-eslint/no-implied-eval': 0,
+        '@typescript-eslint/no-invalid-void-type': 0,
         '@typescript-eslint/no-meaningless-void-operator': 0,
         '@typescript-eslint/no-misused-promises': 0,
         '@typescript-eslint/no-mixed-enums': 0,

@@ -4,7 +4,7 @@
  */
 
 import type * as docast from '@flex-development/docast'
-import type { Parent } from 'unist'
+import type { Node, Parent } from 'unist'
 import type TestSubject from '../visited-ancestor'
 
 describe('unit-d:types/VisitedAncestor', () => {
@@ -15,7 +15,7 @@ describe('unit-d:types/VisitedAncestor', () => {
   it('should unionize ancestors of nodes in Tree that pass Check', () => {
     // Arrange
     type Tree = docast.Root
-    type Check = (value: unknown) => value is docast.TypeExpression
+    type Check = (value: Node) => value is docast.TypeExpression
     type Expect = docast.BlockTag | docast.Comment | Tree
 
     // Expect

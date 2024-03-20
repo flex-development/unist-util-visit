@@ -4,24 +4,21 @@
  */
 
 import type { NIL } from '@flex-development/tutils'
-import type {
-  Ancestor,
-  MatchInclusiveDescendant,
-  Test
-} from '@flex-development/unist-util-types'
+import type { Ancestor, Test } from '@flex-development/unist-util-types'
 import type { Node, Parent } from 'unist'
+import type VisitedNode from './visited-node'
 
 /**
- * Collect [*ancestors*][1] of nodes in [`Tree`][2] that pass a test.
+ * Collect [*ancestors*][ancestor] of visited nodes in [`Tree`][tree].
  *
- * [1]: https://github.com/syntax-tree/unist#ancestor
- * [2]: https://github.com/syntax-tree/unist#tree
+ * [ancestor]: https://github.com/syntax-tree/unist#ancestor
+ * [tree]: https://github.com/syntax-tree/unist#tree
  *
  * @see {@linkcode Node}
  * @see {@linkcode Test}
  *
  * @template {Node} [Tree=Node] - Tree to extract ancestors from
- * @template {Test} [Check=NIL] - Node test
+ * @template {Test} [Check=NIL] - Visited node test
  */
 type VisitedAncestor<
   Tree extends Node = Node,
@@ -29,6 +26,6 @@ type VisitedAncestor<
 > = // dprint-ignore
   Node extends Tree
     ? Parent
-    : Exclude<Ancestor<Tree, MatchInclusiveDescendant<Tree, Check>>, never>
+    : Exclude<Ancestor<Tree, VisitedNode<Tree, Check>>, never>
 
 export type { VisitedAncestor as default }

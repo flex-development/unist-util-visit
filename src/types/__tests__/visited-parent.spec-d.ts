@@ -14,7 +14,7 @@ describe('unit-d:types/VisitedParent', () => {
 
   it('should unionize parents of nodes in Tree that pass Check', () => {
     // Arrange
-    type Check = (value: unknown) => value is docast.TypeExpression
+    type Check = docast.TypeExpression['type']
     type Expect = docast.BlockTag
 
     // Expect

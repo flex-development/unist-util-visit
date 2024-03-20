@@ -19,7 +19,21 @@
 - [Install](#install)
 - [Use](#use)
 - [API](#api)
-- [Types](#types)
+  - [`visit(tree[, test], visitor|visitors[, reverse])`](#visittree-test-visitorvisitors-reverse)
+  - [`CONTINUE`](#continue)
+  - [`EXIT`](#exit)
+  - [`SKIP`](#skip)
+  - [`Action`](#action)
+  - [`ActionTuple`](#actiontuple)
+  - [`Index`](#index)
+  - [`Test`](#test)
+  - [`TestFunction<[T][, P]>`](#testfunctiont-p)
+  - [`VisitedAncestor<[Tree][, Check]>`](#visitedancestortree-check)
+  - [`VisitedNode<[Tree][, Check]>`](#visitednodetree-check)
+  - [`VisitedParent<[Tree][, Check]>`](#visitedparenttree-check)
+  - [`Visitor<[Tree][, Check]>`](#visitortree-check)
+  - [`VisitorResult`](#visitorresult)
+  - [`Visitors<[Tree][, Check]>`](#visitorstree-check)
 - [Related](#related)
 - [Contribute](#contribute)
 
@@ -33,7 +47,7 @@ Use this utility when you want to walk the tree with ancestral information, or n
 walk.
 
 You can use [`unist-util-visit-parents`][unist-util-visit-parents] or [`syntax-tree/unist-util-visit`][unist-util-visit]
-if you only need to do a [*preorder*][preorder] traversal, or don't care the entire stack of parents.
+if you only need to do a [*preorder*][preorder] traversal, or don't care about the entire stack of parents.
 
 ## Install
 
@@ -43,6 +57,7 @@ In Node.js (version 18+) with [yarn][yarn]:
 
 ```sh
 yarn add @flex-development/unist-util-visit
+yarn add -D @types/unist
 ```
 
 <blockquote>
@@ -72,11 +87,268 @@ In browsers with [`esm.sh`][esmsh]:
 
 ## API
 
-**TODO**: api
+This package exports the identifiers [`CONTINUE`](#continue), [`EXIT`](#exit), [`SKIP`](#skip), and
+[`visit`](#visittree-test-visitorvisitors-reverse). There is no default export.
 
-## Types
+### `visit(tree[, test], visitor|visitors[, reverse])`
 
-This package is fully typed with [TypeScript][typescript].
+Visit nodes, with ancestral information.
+
+This algorithm performs [*depth-first tree traversal*][dft] in [*preorder*][preorder] (**NLR**) and/or
+[*postorder*][postorder] (**LRN**), or if `reverse` is given, *reverse preorder* (**NRL**) and/or *reverse postorder*
+(**RLN**). Nodes are handled on [*enter*][enter] during *preorder* traversals and on [*exit*][exit] during *postorder*
+traversals.
+
+You can choose which nodes visitor functions handle by passing a [`test`](#test). For complex tests, you should test
+yourself in `visitor` or `visitors` instead, as it will be faster and also have improved type information.
+
+Walking the `tree` is an intensive task. Make use of visitor return values whenever possible. Instead of walking the
+`tree` multiple times, walk it once, use [`unist-util-is`][unist-util-is] to check if a node matches, and then perform
+different operations.
+
+You can change `tree`. See [`Visitor`](#visitortree-check) for more info.
+
+#### Parameters
+
+- `tree` ([`Node`][node]) - [*tree*][tree] to traverse
+- `test` ([`Test`](#test), optional) - [`unist-util-is`][unist-util-is]-compatible test
+- `visitor` ([`Visitor`](#visitortree-check)) - handle a node on *enter*
+- `visitors` ([`Visitors`](#visitorstree-check)) - handle each node on *enter* and/or *exit*
+- `reverse` (`boolean`, optional) - traverse in reverse
+
+#### Return
+
+Nothing (`void`).
+
+### `CONTINUE`
+
+Continue traversing as normal (`true`).
+
+```ts
+const CONTINUE: Continue = true
+```
+
+### `EXIT`
+
+Stop traversing immediately (`false`).
+
+```ts
+const EXIT: Exit = false
+```
+
+### `SKIP`
+
+Do not traverse the [*children*][child] of this node (`'skip'`).
+
+```ts
+const SKIP: Skip = 'skip'
+```
+
+### `Action`
+
+Union of action types.
+
+```ts
+type Action = Continue | Exit | Skip
+```
+
+### `ActionTuple`
+
+List with at most two (`2`) values, the first an [`Action`](#action) and the second an [`Index`](#index).
+
+```ts
+type ActionTuple = [
+  action?: Action | null | undefined | void,
+  index?: Index | null | undefined
+]
+```
+
+### `Index`
+
+Move to the [*sibling*][sibling] at `index` next (after node itself is completely traversed).
+
+Useful if mutating the `tree`, such as when removing the node the [`Visitor`](#visitortree-check) is currently on, or
+any of its previous *siblings*.
+
+Negative indices (`< 0`) and indices greater than or equal to `parent.children.length` stop traversal of the parent.
+
+```ts
+type Index = number
+```
+
+### `Test`
+
+Check for an arbitrary [`Node`][node].
+
+See [`unist-util-is`][unist-util-is] for more details.
+
+```ts
+type Test =
+  | (TestFunction | unist.Node | unist.Node['type'])[]
+  | TestFunction
+  | unist.Node
+  | unist.Node['type']
+  | null
+  | undefined
+```
+
+### `TestFunction<[T][, P]>`
+
+Check if `node` passes a test.
+
+- `T` ([`Node`][node]): node to check
+  - **default**: [`Node`][node]
+- `P` ([`Parent`][parent]): [*parent*][parent] of node `T`
+  - **default**: [`Parent`][parent]
+
+#### Parameters
+
+- `node` (`T`): node to check
+- `index` ([`Index`](#index) | `undefined`): index of `node` in `parent.children`
+- `parent` ([`Parent`][parent] | `undefined`): [*parent*][parent] of `node`
+
+#### Return
+
+Test result (`boolean | undefined | void`).
+
+> 👉 **Note**: For the best type-safety, test functions should return [type predicates][type-predicate] (`node is Type`).
+
+### `VisitedAncestor<[Tree][, Check]>`
+
+Collect [*ancestors*][ancestor] of visited nodes in [`Tree`][tree].
+
+- `Tree` ([`Node`][node]) - [*tree*][tree] to extract ancestors from
+  - **default**: [`Node`][node]
+- `Check` ([`Test`](#test)) - visited node test
+  - **default**: `null | undefined`
+
+```ts
+import type * as docast from '@flex-development/docast'
+import type { VisitedAncestor } from '@flex-development/unist-util-visit'
+import type * as unist from 'unist'
+
+type Tree = docast.Root
+type Check = (value: unist.Node) => value is docast.TypeExpression
+
+type Visited = VisitedAncestor<Tree, Check> // docast.BlockTag | docast.Comment | docast.Root
+```
+
+### `VisitedNode<[Tree][, Check]>`
+
+Collect visited nodes in [`Tree`][tree].
+
+- `Tree` ([`Node`][node]) - [*tree*][tree] to traverse
+  - **default**: [`Node`][node]
+- `Check` ([`Test`](#test)) - visited node test
+  - **default**: `null | undefined`
+
+```ts
+import type * as docast from '@flex-development/docast'
+import type { VisitedNode } from '@flex-development/unist-util-visit'
+
+type Tree = docast.Root
+
+type Visited = VisitedNode<Tree>
+// | docast.Root
+// | docast.Comment
+// | docast.BlockTag
+// | docast.Description
+// | docast.InlineTag
+// | docast.TypeExpression
+// | mdast.Blockquote
+// | mdast.Code
+// | mdast.Definition
+// | mdast.FootnoteDefinition
+// | mdast.Heading
+// | mdast.List
+// | mdast.ListItem
+// | mdast.Paragraph
+// | mdast.PhrasingContent
+// | mdast.Table
+// | mdast.TableCell
+// | mdast.TableRow
+// | mdast.ThematicBreak
+```
+
+### `VisitedParent<[Tree][, Check]>`
+
+Collect [*parents*][parent] of visited nodes in [`Tree`][tree].
+
+- `Tree` ([`Node`][node]) - [*tree*][tree] to extract parents from
+  - **default**: [`Node`][node]
+- `Check` ([`Test`](#test)) - visited node test
+  - **default**: `null | undefined`
+
+```ts
+import type * as docast from '@flex-development/docast'
+import type { VisitedNode } from '@flex-development/unist-util-visit'
+
+type Tree = docast.Root
+type Check = docast.TypeExpression['type']
+
+type Visited = VisitedNode<Tree, Check> // docast.BlockTag
+```
+
+### `Visitor<[Tree][, Check]>`
+
+Handle a `node`.
+
+Visitors are free to transform `node`. They can also transform `parent`, or the grandparent of `node` (the last of
+`ancestors`).
+
+> 👉 **Note**: Replacing `node` itself, if [`SKIP`](#skip) is not returned, still causes its [*descendants*][descendant]
+> to be walked (which is a bug).
+
+When adding or removing previous [*siblings*][sibling] of `node`, the `Visitor` should return a new [`Index`](#index) to
+specify the *sibling* to traverse after `node` is traversed. Adding or removing next *siblings* of `node` is handled as
+expected without needing to return a new `Index`.
+
+Removing the [*children*][child] of an [*ancestor*][ancestor] still results in those *child* nodes being traversed.
+
+- `Tree` ([`Node`][node]) - [*tree*][tree] to traverse
+  - **default**: [`Node`][node]
+- `Check` ([`Test`](#test)) - visited node test
+  - **default**: `null | undefined`
+
+#### Parameters
+
+- `node` ([`VisitedNode<Tree, Check>`](#visitednodetree-check)) - found node
+- `index` ([`Index`](#index) | `undefined`) - index of `node` in `parent.children`
+- `parent` ([`VisitedParent<Tree, Check>`](#visitedparenttree-check) | `undefined`) - [*parent*][parent] of `node`
+- `ancestors` ([`VisitedAncestor<Tree, Check>[]`](#visitedancestortree-check)) - [*ancestors*][ancestor] of `node`, if
+  any, where the last node is the grandparent of `node`
+
+#### Return
+
+What to do next ([`VisitorResult`](#visitorresult)).
+
+### `VisitorResult`
+
+Union of values that can be returned from a [`Visitor`](#visitortree-check).
+
+An [`Index`](#index) is treated as a tuple of `[CONTINUE, Index]`. An [`Action`](#action) is treated as a tuple of
+`[Action]`.
+
+Returning a tuple only makes sense if the `Action` is [`SKIP`](#skip). When the `Action` is [`EXIT`](#exit), that action
+can be returned. When the `Action` is [`CONTINUE`](#continue), `Index` can be returned.
+
+```ts
+type VisitorResult = Action | ActionTuple | Index | null | undefined | void
+```
+
+### `Visitors<[Tree][, Check]>`
+
+Handle nodes when entering ([*preorder*][preorder]) and/or leaving ([*postorder*][postorder]).
+
+- `Tree` ([`Node`][node]) - [*tree*][tree] to traverse
+  - **default**: [`Node`][node]
+- `Check` ([`Test`](#test)) - visited node test
+  - **default**: `null | undefined`
+
+#### Fields
+
+- `enter` ([`Visitor<Tree, Check>`](#visitortree-check), optional) - handle nodes when [*entering*][enter] (*preorder*)
+- `leave` ([`Visitor<Tree, Check>`](#visitortree-check), optional) - handle nodes when [*exiting*][exit] (*postorder*)
 
 ## Related
 
@@ -96,11 +368,21 @@ See [`CONTRIBUTING.md`](CONTRIBUTING.md).
 This project has a [code of conduct](CODE_OF_CONDUCT.md). By interacting with this repository, organization, or
 community you agree to abide by its terms.
 
+[ancestor]: https://github.com/syntax-tree/unist#ancestor
+[child]: https://github.com/syntax-tree/unist#child
+[dft]: https://github.com/syntax-tree/unist#depth-first-traversal
+[descendant]: https://github.com/syntax-tree/unist#descendant
+[enter]: https://github.com/syntax-tree/unist#enter
 [esm]: https://gist.github.com/sindresorhus/a39789f98801d908bbc7ff3ecc99d99c
 [esmsh]: https://esm.sh/
+[exit]: https://github.com/syntax-tree/unist#exit
+[node]: https://github.com/syntax-tree/unist#node
+[parent]: https://github.com/syntax-tree/unist#parent-1
 [postorder]: https://github.com/syntax-tree/unist#postorder
 [preorder]: https://github.com/syntax-tree/unist#preorder
-[typescript]: https://www.typescriptlang.org
+[sibling]: https://github.com/syntax-tree/unist#sibling
+[tree]: https://github.com/syntax-tree/unist#tree
+[type-predicate]: https://www.typescriptlang.org/docs/handbook/2/narrowing.html#using-type-predicates
 [unist-util-filter]: https://github.com/syntax-tree/unist-util-filter
 [unist-util-flatmap]: https://github.com/syntax-tree/unist-util-flatmap
 [unist-util-generated]: https://github.com/syntax-tree/unist-util-generated

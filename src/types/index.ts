@@ -3,7 +3,11 @@
  * @module unist-util-visit/types
  */
 
-export type { Index } from '@flex-development/unist-util-types'
+export type {
+  Index,
+  Test,
+  TestFunction
+} from '@flex-development/unist-util-types'
 export type { default as Action } from './action'
 export type { default as ActionTuple } from './action-tuple'
 export type { default as Continue } from './continue'

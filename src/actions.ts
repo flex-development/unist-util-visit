@@ -24,9 +24,9 @@ const CONTINUE: Continue = true
 const EXIT: Exit = false
 
 /**
- * Do not traverse the [*children*][1] of this node.
+ * Do not traverse the [*children*][child] of this node.
  *
- * [1]: https://github.com/syntax-tree/unist#child
+ * [child]: https://github.com/syntax-tree/unist#child
  *
  * @see {@linkcode Skip}
  *

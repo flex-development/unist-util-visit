@@ -9,31 +9,33 @@ import type { Node } from 'unist'
 import type Visitor from './visitor'
 
 /**
- * Handle nodes when entering ([*preorder*][1]) and leaving ([*postorder*][2]).
+ * Handle a node on [*enter*][enter] and/or [*exit*][exit].
  *
- * [1]: https://github.com/syntax-tree/unist#preorder
- * [2]: https://github.com/syntax-tree/unist#postorder
+ * [enter]: https://github.com/syntax-tree/unist#enter
+ * [exit]: https://github.com/syntax-tree/unist#preorder
  *
  * @see {@linkcode Node}
  * @see {@linkcode Test}
  *
  * @template {Node} [Tree=Node] - Tree being visited
- * @template {Test} [Check=NIL] - Node test
+ * @template {Test} [Check=NIL] - Visited node test
  */
 type Visitors<Tree extends Node = Node, Check extends Test = NIL> = {
   /**
-   * Handle nodes when entering ([*preorder*][1]).
+   * Handle a node on [*enter*][enter] ([*preorder*][preorder]).
    *
-   * [1]: https://github.com/syntax-tree/unist#preorder
+   * [enter]: https://github.com/syntax-tree/unist#enter
+   * [preorder]: https://github.com/syntax-tree/unist#preorder
    *
    * @see {@linkcode Visitor}
    */
   enter?: Nilable<Visitor<Tree, Check>>
 
   /**
-   * Handle nodes when leaving ([*postorder*][1]).
+   * Handle a node on [*exit*][exit] ([*postorder*][postorder]).
    *
-   * [1]: https://github.com/syntax-tree/unist#postorder
+   * [exit]: https://github.com/syntax-tree/unist#preorder
+   * [postorder]: https://github.com/syntax-tree/unist#postorder
    *
    * @see {@linkcode Visitor}
    */
