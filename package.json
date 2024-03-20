@@ -8,6 +8,8 @@
     "esast",
     "hast",
     "mdast",
+    "postorder",
+    "preorder",
     "syntax-tree",
     "traverse",
     "tree",

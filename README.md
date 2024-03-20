@@ -29,7 +29,11 @@ This package is an essential utility for [unist][unist] that lets you walk the t
 
 ## When should I use this?
 
-**TODO**: when should i use this?
+Use this utility when you want to walk the tree with ancestral information, or need to do a [*postorder*][postorder]
+walk.
+
+You can use [`unist-util-visit-parents`][unist-util-visit-parents] or [`syntax-tree/unist-util-visit`][unist-util-visit]
+if you only need to do a [*preorder*][preorder] traversal, or don't care the entire stack of parents.
 
 ## Install
 
@@ -94,6 +98,8 @@ community you agree to abide by its terms.
 
 [esm]: https://gist.github.com/sindresorhus/a39789f98801d908bbc7ff3ecc99d99c
 [esmsh]: https://esm.sh/
+[postorder]: https://github.com/syntax-tree/unist#postorder
+[preorder]: https://github.com/syntax-tree/unist#preorder
 [typescript]: https://www.typescriptlang.org
 [unist-util-filter]: https://github.com/syntax-tree/unist-util-filter
 [unist-util-flatmap]: https://github.com/syntax-tree/unist-util-flatmap
@@ -102,5 +108,6 @@ community you agree to abide by its terms.
 [unist-util-map]: https://github.com/syntax-tree/unist-util-map
 [unist-util-remove]: https://github.com/syntax-tree/unist-util-remove
 [unist-util-visit-parents]: https://github.com/syntax-tree/unist-util-visit-parents
+[unist-util-visit]: https://github.com/syntax-tree/unist-util-visit
 [unist]: https://github.com/syntax-tree/unist
 [yarn]: https://yarnpkg.com
