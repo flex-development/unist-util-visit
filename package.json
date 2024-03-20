@@ -1,14 +1,22 @@
 {
   "name": "@flex-development/unist-util-visit",
-  "description": "utility to visit nodes",
+  "description": "unist utility to visit nodes",
   "version": "0.0.1",
   "keywords": [
+    "ast",
+    "docast",
+    "esast",
+    "hast",
+    "mdast",
     "syntax-tree",
+    "traverse",
+    "tree",
     "unist",
     "unist-util",
     "util",
     "visit",
-    "walk"
+    "walk",
+    "xast"
   ],
   "license": "BSD-3-Clause",
   "homepage": "https://github.com/flex-development/unist-util-visit",

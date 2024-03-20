@@ -25,7 +25,7 @@
 
 ## What is this?
 
-**TODO**: what is this?
+This package is an essential utility for [unist][unist] that lets you walk the tree.
 
 ## When should I use this?
 
