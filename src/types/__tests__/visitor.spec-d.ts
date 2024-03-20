@@ -5,12 +5,9 @@
 
 import type * as docast from '@flex-development/docast'
 import type { Optional } from '@flex-development/tutils'
-import type {
-  Index,
-  MatchInclusiveDescendant,
-  Type
-} from '@flex-development/unist-util-types'
+import type { Index, Type } from '@flex-development/unist-util-types'
 import type VisitedAncestor from '../visited-ancestor'
+import type VisitedNode from '../visited-node'
 import type VisitedParent from '../visited-parent'
 import type TestSubject from '../visitor'
 import type VisitorResult from '../visitor-result'
@@ -25,9 +22,9 @@ describe('unit-d:types/Visitor', () => {
   })
 
   describe('parameters', () => {
-    it('should match [0: MatchInclusiveDescendant<Tree, Check>]', () => {
+    it('should match [0: VisitedNode<Tree, Check>]', () => {
       // Arrange
-      type Expect = MatchInclusiveDescendant<Tree, Check>
+      type Expect = VisitedNode<Tree, Check>
 
       // Expect
       expectTypeOf<Subject>().parameter(0).toEqualTypeOf<Expect>()

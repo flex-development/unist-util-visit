@@ -3,15 +3,11 @@
  * @module unist-util-visit/types/Visitor
  */
 
-import type { Optional } from '@flex-development/tutils'
-import type {
-  Index,
-  MatchInclusiveDescendant,
-  Test
-} from '@flex-development/unist-util-types'
+import type { Index, Test } from '@flex-development/unist-util-types'
 import type { Node } from 'unist'
 import type Action from './action'
 import type VisitedAncestor from './visited-ancestor'
+import type VisitedNode from './visited-node'
 import type VisitedParent from './visited-parent'
 import type VisitorResult from './visitor-result'
 
@@ -46,10 +42,10 @@ import type VisitorResult from './visitor-result'
  *
  * @see {@linkcode Action}
  * @see {@linkcode Index}
- * @see {@linkcode MatchInclusiveDescendant}
  * @see {@linkcode Node}
  * @see {@linkcode Test}
  * @see {@linkcode VisitedAncestor}
+ * @see {@linkcode VisitedNode}
  * @see {@linkcode VisitedParent}
  * @see {@linkcode VisitorResult}
  *
@@ -58,17 +54,18 @@ import type VisitorResult from './visitor-result'
  *
  * @this {void}
  *
- * @param {MatchInclusiveDescendant<Tree, Check>} node - Found node
- * @param {Optional<Index>} index - Index of `node` in `parent.children`
- * @param {Optional<VisitedParent<Tree, Check>>} parent - Parent of `node`
- * @param {VisitedAncestor<Tree, Check>[]} ancestors - Ancestors of `node`
+ * @param {VisitedNode<Tree, Check>} node - Found node
+ * @param {Index | undefined} index - Index of `node` in `parent.children`
+ * @param {VisitedParent<Tree, Check> | undefined} parent - Parent of `node`
+ * @param {VisitedAncestor<Tree, Check>[]} ancestors - Ancestors of `node`, if
+ * any, where the last node is the grandparent of `node`
  * @return {VisitorResult} What to do next
  */
 type Visitor<Tree extends Node = Node, Check extends Test = Test> = (
   this: void,
-  node: MatchInclusiveDescendant<Tree, Check>,
-  index: Optional<Index>,
-  parent: Optional<VisitedParent<Tree, Check>>,
+  node: VisitedNode<Tree, Check>,
+  index: Index | undefined,
+  parent: VisitedParent<Tree, Check> | undefined,
   ancestors: VisitedAncestor<Tree, Check>[]
 ) => VisitorResult
 
