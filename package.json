@@ -1,7 +1,7 @@
 {
   "name": "@flex-development/unist-util-visit",
   "description": "unist utility to visit nodes",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "keywords": [
     "ast",
     "docast",
