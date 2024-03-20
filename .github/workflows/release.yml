@@ -15,7 +15,6 @@
 # - https://docs.github.com/webhooks-and-events/webhooks/webhook-events-and-payloads#workflow_dispatch
 # - https://git-scm.com/book/en/v2/Git-Basics-Tagging
 # - https://github.com/actions/checkout
-# - https://github.com/bdougie/close-issues-based-on-label
 # - https://github.com/crazy-max/ghaction-import-gpg
 # - https://github.com/flex-development/dist-tag-action
 # - https://github.com/flex-development/grease
@@ -135,8 +134,3 @@ jobs:
           TAG: ${{ needs.preflight.outputs.tag }}
         run: |
           gh release create $TAG *.tgz --title=$TAG --notes-file=$NOTES_FILE --verify-tag --prerelease=$PRERELEASE --discussion-category=releases
-      - id: close-issues
-        name: Close released issues
-        uses: bdougie/close-issues-based-on-label@master
-        env:
-          LABEL: status:${{ needs.preflight.outputs.prerelease && 'prereleased' || 'released' }}

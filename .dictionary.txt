@@ -1,5 +1,4 @@
 attw
-bdougie
 cefc
 codecov
 commitlintrc
