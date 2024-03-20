@@ -29,9 +29,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@arethetypeswrong/cli@npm:0.15.1":
-  version: 0.15.1
-  resolution: "@arethetypeswrong/cli@npm:0.15.1"
+"@arethetypeswrong/cli@npm:0.15.2":
+  version: 0.15.2
+  resolution: "@arethetypeswrong/cli@npm:0.15.2"
   dependencies:
     "@arethetypeswrong/core": "npm:0.15.1"
     chalk: "npm:^4.1.2"
@@ -42,7 +42,7 @@ __metadata:
     semver: "npm:^7.5.4"
   bin:
     attw: dist/index.js
-  checksum: 10/e954a49864b1230804579c7ef36fb725d90c6ae39bc1a843ccf3f7a18864beebd2f45a9bfd81d42b3048e7d22bcc580ccecf27f8ecd76bc4110795ca9000a587
+  checksum: 10/c0a7088a6766555f74dd2872691598cafb4930b00ae82fa6b5eb8014fc1aa31272dda77eaf39f0fe1a7df3197fac99cd0acfb5e2f4412315b6776a868eaa1850
   languageName: node
   linkType: hard
 
@@ -1809,7 +1809,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@flex-development/unist-util-visit@workspace:."
   dependencies:
-    "@arethetypeswrong/cli": "npm:0.15.1"
+    "@arethetypeswrong/cli": "npm:0.15.2"
     "@commitlint/cli": "npm:19.2.0"
     "@commitlint/types": "npm:19.0.3"
     "@flex-development/commitlint-config": "npm:1.0.1"
