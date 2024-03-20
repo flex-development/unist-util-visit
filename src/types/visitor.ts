@@ -3,6 +3,7 @@
  * @module unist-util-visit/types/Visitor
  */
 
+import type { NIL } from '@flex-development/tutils'
 import type { Index, Test } from '@flex-development/unist-util-types'
 import type { Node } from 'unist'
 import type Action from './action'
@@ -50,7 +51,7 @@ import type VisitorResult from './visitor-result'
  * @see {@linkcode VisitorResult}
  *
  * @template {Node} [Tree=Node] - Tree being visited
- * @template {Test} [Check=Test] - Node test
+ * @template {Test} [Check=NIL] - Node test
  *
  * @this {void}
  *
@@ -61,7 +62,7 @@ import type VisitorResult from './visitor-result'
  * any, where the last node is the grandparent of `node`
  * @return {VisitorResult} What to do next
  */
-type Visitor<Tree extends Node = Node, Check extends Test = Test> = (
+type Visitor<Tree extends Node = Node, Check extends Test = NIL> = (
   this: void,
   node: VisitedNode<Tree, Check>,
   index: Index | undefined,

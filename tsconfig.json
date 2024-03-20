@@ -32,7 +32,8 @@
       "#fixtures/*": ["__fixtures__/*"],
       "#src/*": ["src/*"],
       "#tests/*": ["__tests__/*"],
-      "@flex-development/unist-util-visit": ["src/index"]
+      "@flex-development/unist-util-visit/color": ["src/color.node"],
+      "@flex-development/unist-util-visit": ["dist/index", "src/index"]
     },
     "preserveConstEnums": true,
     "preserveSymlinks": false,

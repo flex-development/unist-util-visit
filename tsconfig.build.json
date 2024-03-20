@@ -3,6 +3,12 @@
     "customConditions": ["import", "node"],
     "declaration": true,
     "noEmitOnError": true,
+    "paths": {
+      "#src/*": ["src/*"],
+      "@flex-development/unist-util-visit/color": [
+        "@flex-development/unist-util-visit/color"
+      ]
+    },
     "skipLibCheck": false,
     "target": "es2022"
   },

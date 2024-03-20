@@ -37,7 +37,7 @@ const config: UserConfigExport = defineConfig((env: ConfigEnv): UserConfig => {
     plugins: [
       tsconfigPaths({
         parseNative: true,
-        projects: [pathe.resolve('tsconfig.json')]
+        projects: [pathe.resolve('tsconfig.typecheck.json')]
       })
     ],
     test: {
@@ -61,7 +61,9 @@ const config: UserConfigExport = defineConfig((env: ConfigEnv): UserConfig => {
           '**/__tests__/**',
           '**/interfaces/',
           '**/types/',
-          '**/index.ts'
+          '**/index.ts',
+          '!src/index.ts',
+          'src/color*.ts'
         ],
         extension: ['.ts'],
         include: ['src'],

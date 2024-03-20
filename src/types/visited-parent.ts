@@ -3,6 +3,7 @@
  * @module unist-util-visit/types/VisitedParent
  */
 
+import type { NIL } from '@flex-development/tutils'
 import type {
   InclusiveDescendant,
   MatchInclusiveDescendant,
@@ -20,17 +21,17 @@ import type { Node, Parent } from 'unist'
  * @see {@linkcode Node}
  * @see {@linkcode Test}
  *
- * @template {Node} Tree - Tree to extract parents from
- * @template {Test} Check - Node test
+ * @template {Node} [Tree=Node] - Tree to extract parents from
+ * @template {Test} [Check=NIL] - Node test
  */
 type VisitedParent<
   Tree extends Node = Node,
-  Check extends Test = Test
+  Check extends Test = NIL
 > = // dprint-ignore
   Node extends Tree
     ? Parent
     : Parents<
-        Extract<InclusiveDescendant<Tree>, Parent>,
+        InclusiveDescendant<Tree>,
         MatchInclusiveDescendant<Tree, Check>
       >
 

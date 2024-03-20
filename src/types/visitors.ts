@@ -3,7 +3,7 @@
  * @module unist-util-visit/types/Visitors
  */
 
-import type { Nilable } from '@flex-development/tutils'
+import type { NIL, Nilable } from '@flex-development/tutils'
 import type { Test } from '@flex-development/unist-util-types'
 import type { Node } from 'unist'
 import type Visitor from './visitor'
@@ -18,9 +18,9 @@ import type Visitor from './visitor'
  * @see {@linkcode Test}
  *
  * @template {Node} [Tree=Node] - Tree being visited
- * @template {Test} [Check=Test] - Node test
+ * @template {Test} [Check=NIL] - Node test
  */
-type Visitors<Tree extends Node = Node, Check extends Test = Test> = {
+type Visitors<Tree extends Node = Node, Check extends Test = NIL> = {
   /**
    * Handle nodes when entering ([*preorder*][1]).
    *

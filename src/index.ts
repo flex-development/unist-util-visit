@@ -5,3 +5,4 @@
 
 export * from './actions'
 export type * from './types'
+export { default as visit } from './visit'

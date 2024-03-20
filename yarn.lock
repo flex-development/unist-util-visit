@@ -1825,12 +1825,12 @@ __metadata:
     "@flex-development/unist-util-types": "npm:1.2.0"
     "@html-eslint/eslint-plugin": "npm:0.24.0"
     "@html-eslint/parser": "npm:0.24.0"
-    "@types/chai": "npm:4.3.12"
+    "@types/chai": "npm:4.3.13"
     "@types/eslint": "npm:8.56.5"
     "@types/hast": "npm:3.0.4"
     "@types/is-ci": "npm:3.0.4"
     "@types/mdast": "npm:4.0.3"
-    "@types/node": "npm:20.11.28"
+    "@types/node": "npm:20.11.30"
     "@types/node-notifier": "npm:8.0.5"
     "@types/unist": "npm:3.0.2"
     "@types/xast": "npm:2.0.4"
@@ -2313,10 +2313,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/chai@npm:4.3.12":
-  version: 4.3.12
-  resolution: "@types/chai@npm:4.3.12"
-  checksum: 10/cf465151048f438b11e562ac431842f440b50817e74516f1fb349860a0db4fcdd665197f9fbee4387250d8d077496a1167fe2c75af88372bac6d8f093ee07b3a
+"@types/chai@npm:4.3.13":
+  version: 4.3.13
+  resolution: "@types/chai@npm:4.3.13"
+  checksum: 10/5409f78322f99f4a121b909eae76adcd72dddb1fe59950f1a38e8fa4c726204bc1ed3d0d0be765155eecdedcf4205498a8a6114a2df5b0ba12d27f926a5ab047
   languageName: node
   linkType: hard
 
@@ -2485,12 +2485,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:*, @types/node@npm:20.11.28, @types/node@npm:^20.0.0":
-  version: 20.11.28
-  resolution: "@types/node@npm:20.11.28"
+"@types/node@npm:*, @types/node@npm:20.11.30, @types/node@npm:^20.0.0":
+  version: 20.11.30
+  resolution: "@types/node@npm:20.11.30"
   dependencies:
     undici-types: "npm:~5.26.4"
-  checksum: 10/b03f69213ac6e7cd5f7efa86139f24e23ff70a12fed04adeac5413b62d6982343ce94906f74c401c5afefda48d36ae0efd6a575240996b15a5cf80b456ab4221
+  checksum: 10/78515bc768d2b878e2e06a1c20eb4f5840072b79b8d28ff3dd0a7feaaf48fd3a2ac03cfa5bc7564da82db5906b43e9ba0e5df9f43d870b7aae2942306e208815
   languageName: node
   linkType: hard
 

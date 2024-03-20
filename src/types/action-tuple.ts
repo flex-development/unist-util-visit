@@ -8,10 +8,8 @@ import type { Index } from '@flex-development/unist-util-types'
 import type Action from './action'
 
 /**
- * List with one or two values, the first an action, the second an index.
- *
- * @see {@linkcode Action}
- * @see {@linkcode Index}
+ * List with at most two (`2`) values, the first an {@linkcode Action} and the
+ * second an {@linkcode Index}.
  */
 type ActionTuple = [action?: Nilable<Action> | void, index?: Nilable<Index>]
 

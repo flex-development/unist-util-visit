@@ -31,6 +31,10 @@
   ],
   "exports": {
     ".": "./dist/index.mjs",
+    "./color": {
+      "node": "./dist/color.node.mjs",
+      "default": "./dist/color.mjs"
+    },
     "./package.json": "./package.json"
   },
   "types": "./dist/index.d.mts",
@@ -91,12 +95,12 @@
     "@flex-development/pathe": "2.0.0",
     "@html-eslint/eslint-plugin": "0.24.0",
     "@html-eslint/parser": "0.24.0",
-    "@types/chai": "4.3.12",
+    "@types/chai": "4.3.13",
     "@types/eslint": "8.56.5",
     "@types/hast": "3.0.4",
     "@types/is-ci": "3.0.4",
     "@types/mdast": "4.0.3",
-    "@types/node": "20.11.28",
+    "@types/node": "20.11.30",
     "@types/node-notifier": "8.0.5",
     "@types/unist": "3.0.2",
     "@types/xast": "2.0.4",

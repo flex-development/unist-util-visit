@@ -14,7 +14,11 @@ import tsconfig from './tsconfig.build.json' assert { type: 'json' }
  */
 const config: Config = defineBuildConfig({
   charset: 'utf8',
-  entries: [{ dts: 'only' }, { dts: false, ignore: ['types'] }],
+  entries: [
+    { pattern: ['color.*', 'index.ts'] },
+    { dts: false, ignore: ['color.*', 'index.ts', 'types'] },
+    { dts: 'only' }
+  ],
   target: ['node18', tsconfig.compilerOptions.target],
   tsconfig: 'tsconfig.build.json'
 })

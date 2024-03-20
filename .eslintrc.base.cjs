@@ -747,7 +747,7 @@ const config = {
         'unicorn/prefer-export-from': [2, { ignoreUsedVariables: true }],
         'unicorn/prefer-includes': 2,
         'unicorn/prefer-json-parse-buffer': 0,
-        'unicorn/prefer-math-trunc': 2,
+        'unicorn/prefer-math-trunc': 0,
         'unicorn/prefer-module': 2,
         'unicorn/prefer-negative-index': 2,
         'unicorn/prefer-node-protocol': 2,

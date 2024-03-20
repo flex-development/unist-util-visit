@@ -3,6 +3,7 @@
  * @module unist-util-visit/types/VisitedAncestor
  */
 
+import type { NIL } from '@flex-development/tutils'
 import type {
   Ancestor,
   MatchInclusiveDescendant,
@@ -19,15 +20,15 @@ import type { Node, Parent } from 'unist'
  * @see {@linkcode Node}
  * @see {@linkcode Test}
  *
- * @template {Node} Tree - Tree to extract ancestors from
- * @template {Test} Check - Node test
+ * @template {Node} [Tree=Node] - Tree to extract ancestors from
+ * @template {Test} [Check=NIL] - Node test
  */
 type VisitedAncestor<
   Tree extends Node = Node,
-  Check extends Test = Test
+  Check extends Test = NIL
 > = // dprint-ignore
   Node extends Tree
     ? Parent
-    : Ancestor<Tree, MatchInclusiveDescendant<Tree, Check>>
+    : Exclude<Ancestor<Tree, MatchInclusiveDescendant<Tree, Check>>, never>
 
 export type { VisitedAncestor as default }
