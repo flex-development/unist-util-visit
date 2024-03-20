@@ -1865,6 +1865,8 @@ __metadata:
     is-ci: "npm:3.0.1"
     jsonc-eslint-parser: "npm:2.4.0"
     lint-staged: "npm:15.2.2"
+    mdast-util-directive: "npm:3.0.0"
+    micromark-extension-directive: "npm:3.0.0"
     node-notifier: "npm:10.0.1"
     prettier: "npm:3.2.5"
     remark: "npm:15.0.1"
@@ -7024,7 +7026,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"mdast-util-directive@npm:^3.0.0":
+"mdast-util-directive@npm:3.0.0, mdast-util-directive@npm:^3.0.0":
   version: 3.0.0
   resolution: "mdast-util-directive@npm:3.0.0"
   dependencies:
@@ -7352,7 +7354,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"micromark-extension-directive@npm:^3.0.0":
+"micromark-extension-directive@npm:3.0.0, micromark-extension-directive@npm:^3.0.0":
   version: 3.0.0
   resolution: "micromark-extension-directive@npm:3.0.0"
   dependencies:

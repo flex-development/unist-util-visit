@@ -145,6 +145,8 @@
     "is-ci": "3.0.1",
     "jsonc-eslint-parser": "2.4.0",
     "lint-staged": "15.2.2",
+    "mdast-util-directive": "3.0.0",
+    "micromark-extension-directive": "3.0.0",
     "node-notifier": "10.0.1",
     "prettier": "3.2.5",
     "remark": "15.0.1",

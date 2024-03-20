@@ -83,7 +83,112 @@ In browsers with [`esm.sh`][esmsh]:
 
 ## Use
 
-**TODO**: use
+```js
+import { fromDocs } from '@flex-development/docast-util-from-docs'
+import { visit } from '@flex-development/unist-util-visit'
+import { directiveFromMarkdown } from 'mdast-util-directive'
+import { directive } from 'micromark-extension-directive'
+import { read } from 'to-vfile'
+
+const file = await read('examples/docblock.mjs')
+
+const tree = fromDocs(file, {
+  mdastExtensions: [directiveFromMarkdown()],
+  micromarkExtensions: [directive()]
+})
+
+visit(tree, (node, index, parent, ancestors) => {
+  console.log(`\u001B[1m${node.type}\u001B[22m`)
+  console.log(`index: ${index}`)
+  console.log(`parent: ${parent?.type}`)
+  console.log(`ancestors: ${JSON.stringify(ancestors.map(anc => anc.type))}\n`)
+})
+
+// enter and leave
+visit(tree, {
+  enter(node, index, parent, ancestors) {/* … */},
+  leave(node, index, parent, ancestors) {/* … */}
+})
+```
+
+Yields:
+
+```sh
+root
+index: undefined
+parent: undefined
+ancestors: []
+
+comment
+index: 0
+parent: root
+ancestors: []
+
+description
+index: 0
+parent: comment
+ancestors: ["root"]
+
+paragraph
+index: 0
+parent: description
+ancestors: ["root","comment"]
+
+text
+index: 0
+parent: paragraph
+ancestors: ["root","comment","description"]
+
+break
+index: 1
+parent: description
+ancestors: ["root","comment"]
+
+break
+index: 2
+parent: description
+ancestors: ["root","comment"]
+
+containerDirective
+index: 3
+parent: description
+ancestors: ["root","comment"]
+
+paragraph
+index: 0
+parent: containerDirective
+ancestors: ["root","comment","description"]
+
+text
+index: 0
+parent: paragraph
+ancestors: ["root","comment","description","containerDirective"]
+
+inlineCode
+index: 1
+parent: paragraph
+ancestors: ["root","comment","description","containerDirective"]
+
+text
+index: 2
+parent: paragraph
+ancestors: ["root","comment","description","containerDirective"]
+
+code
+index: 1
+parent: containerDirective
+ancestors: ["root","comment","description"]
+
+blockTag
+index: 1
+parent: comment
+ancestors: ["root"]
+
+typeExpression
+index: 0
+parent: blockTag
+ancestors: ["root","comment"]
+```
 
 ## API
 

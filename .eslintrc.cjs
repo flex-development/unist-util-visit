@@ -19,6 +19,13 @@ const config = {
       }
     },
     {
+      files: ['examples/docblock.mjs'],
+      rules: {
+        'jsdoc/require-file-overview': 0,
+        'unicorn/no-empty-file': 0
+      }
+    },
+    {
       files: ['src/visit.ts'],
       rules: {
         'jsdoc/require-returns-check': 0

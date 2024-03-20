@@ -35,6 +35,7 @@
   "ignoreRegExpList": [
     "/@flex-development\\/.*/",
     "/from\\s+(['\"]).*\\1/",
+    "\\\\u001B\\[\\d+m",
     "import\\(.*\\)"
   ],
   "ignoreWords": [],
