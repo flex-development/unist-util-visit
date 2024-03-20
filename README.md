@@ -76,7 +76,14 @@ This package is fully typed with [TypeScript][typescript].
 
 ## Related
 
-**TODO**: related
+- [`unist-util-filter`][unist-util-filter] &mdash; create a new tree with all nodes that pass a test
+- [`unist-util-flatmap`][unist-util-flatmap] &mdash; create a new tree by mapping (to an array) with the given function
+- [`unist-util-generated`][unist-util-generated] &mdash; check if a node is generated
+- [`unist-util-is`][unist-util-is] &mdash; check if a node passes a test
+- [`unist-util-map`][unist-util-map] &mdash; create a new tree with all nodes mapped by a given function
+- [`unist-util-remove`][unist-util-remove] &mdash; remove nodes from a tree that pass a test
+- [`unist-util-select`][unist-util-filter] &mdash; select nodes with CSS-like selectors
+- [`unist-util-visit-parents`][unist-util-visit-parents] &mdash; recursively walk over nodes, with a stack of parents
 
 ## Contribute
 
@@ -88,5 +95,12 @@ community you agree to abide by its terms.
 [esm]: https://gist.github.com/sindresorhus/a39789f98801d908bbc7ff3ecc99d99c
 [esmsh]: https://esm.sh/
 [typescript]: https://www.typescriptlang.org
+[unist-util-filter]: https://github.com/syntax-tree/unist-util-filter
+[unist-util-flatmap]: https://github.com/syntax-tree/unist-util-flatmap
+[unist-util-generated]: https://github.com/syntax-tree/unist-util-generated
+[unist-util-is]: https://github.com/syntax-tree/unist-util-is
+[unist-util-map]: https://github.com/syntax-tree/unist-util-map
+[unist-util-remove]: https://github.com/syntax-tree/unist-util-remove
+[unist-util-visit-parents]: https://github.com/syntax-tree/unist-util-visit-parents
 [unist]: https://github.com/syntax-tree/unist
 [yarn]: https://yarnpkg.com
