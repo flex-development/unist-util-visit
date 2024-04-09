@@ -1678,7 +1678,7 @@ __metadata:
     "@flex-development/pathe": "npm:2.0.0"
     "@flex-development/tutils": "npm:6.0.0-alpha.25"
     "@flex-development/unist-util-types": "npm:1.2.0"
-    "@html-eslint/eslint-plugin": "npm:0.24.0"
+    "@html-eslint/eslint-plugin": "npm:0.24.1"
     "@html-eslint/parser": "npm:0.24.0"
     "@types/chai": "npm:4.3.13"
     "@types/eslint": "npm:8.56.5"
@@ -1754,10 +1754,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@html-eslint/eslint-plugin@npm:0.24.0":
-  version: 0.24.0
-  resolution: "@html-eslint/eslint-plugin@npm:0.24.0"
-  checksum: 10/911a68370b215bf501a0ba0ccd2042c60992acca6842cf0fe20e4cb5654094d48fce3ca261bbe0e4c1e72621ddd0a09b14019f58b8bb29a1514759a236f52d89
+"@html-eslint/eslint-plugin@npm:0.24.1":
+  version: 0.24.1
+  resolution: "@html-eslint/eslint-plugin@npm:0.24.1"
+  checksum: 10/fbfce9f4b4607c44dac829fd657e0c54d5754f0109565c1399be810aa07acd07515e1787a0ae745f99b41e12a1732cf5f959c8bd6fa5ad44bc8d56e4512cdaea
   languageName: node
   linkType: hard
 
