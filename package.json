@@ -92,7 +92,7 @@
   },
   "devDependencies": {
     "@arethetypeswrong/cli": "0.15.3",
-    "@commitlint/cli": "19.2.1",
+    "@commitlint/cli": "19.2.2",
     "@commitlint/types": "19.0.3",
     "@flex-development/commitlint-config": "1.0.1",
     "@flex-development/decorator-regex": "2.0.0",
