@@ -1281,15 +1281,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@flex-development/docast@npm:1.0.0-alpha.16":
-  version: 1.0.0-alpha.16
-  resolution: "@flex-development/docast@npm:1.0.0-alpha.16::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40flex-development%2Fdocast%2F1.0.0-alpha.16%2Ff15a81b5c760705fe206c6c7bd0acb7328781795"
+"@flex-development/docast@npm:1.0.0-alpha.17":
+  version: 1.0.0-alpha.17
+  resolution: "@flex-development/docast@npm:1.0.0-alpha.17::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40flex-development%2Fdocast%2F1.0.0-alpha.17%2Fed26e664faee975d0993dca6b8e24ec17b8e7b35"
   dependencies:
     "@flex-development/tutils": "npm:6.0.0-alpha.25"
-    "@flex-development/unist-util-types": "npm:1.2.0"
+    "@flex-development/unist-util-types": "npm:1.3.1"
     "@types/mdast": "npm:4.0.3"
     "@types/unist": "npm:3.0.2"
-  checksum: 10/7df755d6820de65af9601aff2cec98fc228aa564210965e10f9a88924c967a7dd5cd8a3cf3c45eb8370bf31cc55ab7bca2ea1805fca6898cd8037ec63361324f
+  checksum: 10/c51b15316ea10af54ab2463205d5c5b755761e031bf185cb14a50e38da38882a6b2dd3a1eff05d838a9aa3691982e64fd6cd3cdc431ba30362a16b9e03bc39cc
   languageName: node
   linkType: hard
 
@@ -1659,15 +1659,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@flex-development/unist-util-types@npm:1.2.0":
-  version: 1.2.0
-  resolution: "@flex-development/unist-util-types@npm:1.2.0::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40flex-development%2Funist-util-types%2F1.2.0%2Fe73575356fb70910ec1467d05a02825d69997f22"
-  peerDependencies:
-    "@types/unist": ">=3.0.2"
-  checksum: 10/01f73462d6bbdb16a67aca5c77e2421fb260acc671d01628d3d1aa0debf044e226d468c033601c3bfb5cff6c47f030690d87e4e84c55ff1dcad513a4419cde0c
-  languageName: node
-  linkType: hard
-
 "@flex-development/unist-util-types@npm:1.3.1":
   version: 1.3.1
   resolution: "@flex-development/unist-util-types@npm:1.3.1::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40flex-development%2Funist-util-types%2F1.3.1%2F44deb809fdc2921405035513bd54c4605213c7bc"
@@ -1686,7 +1677,7 @@ __metadata:
     "@commitlint/types": "npm:19.0.3"
     "@flex-development/commitlint-config": "npm:1.0.1"
     "@flex-development/decorator-regex": "npm:2.0.0"
-    "@flex-development/docast": "npm:1.0.0-alpha.16"
+    "@flex-development/docast": "npm:1.0.0-alpha.17"
     "@flex-development/docast-util-from-docs": "npm:1.0.0-alpha.1"
     "@flex-development/esm-types": "npm:2.0.0"
     "@flex-development/grease": "npm:3.0.0-alpha.9"
