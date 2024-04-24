@@ -96,7 +96,7 @@
     "@commitlint/types": "19.0.3",
     "@flex-development/commitlint-config": "1.0.1",
     "@flex-development/decorator-regex": "2.0.0",
-    "@flex-development/docast": "1.0.0-alpha.16",
+    "@flex-development/docast": "1.0.0-alpha.17",
     "@flex-development/docast-util-from-docs": "1.0.0-alpha.1",
     "@flex-development/esm-types": "2.0.0",
     "@flex-development/grease": "3.0.0-alpha.9",
