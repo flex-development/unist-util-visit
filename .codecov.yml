@@ -86,6 +86,7 @@ ignore:
   - '**/interfaces/'
   - '**/types/'
   - '**/index.ts'
+  - '!src/index.ts'
   - src/color*.ts
 
 profiling:
