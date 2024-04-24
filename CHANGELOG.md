@@ -1,3 +1,57 @@
+## [1.1.0](https://github.com/flex-development/unist-util-visit/compare/1.0.0...1.1.0) (2024-04-24)
+
+### :package: Build
+
+- [[`d25e873`](https://github.com/flex-development/unist-util-visit/commit/d25e873568d5ecb24211687614667e978b5cba43)] **deps-dev:** Bump @arethetypeswrong/cli from 0.15.2 to 0.15.3 ([#36](https://github.com/flex-development/unist-util-visit/issues/36))
+- [[`b6dd141`](https://github.com/flex-development/unist-util-visit/commit/b6dd141e3c33c22c76ad31bb97ea856d8489150a)] **deps-dev:** Bump @commitlint/cli from 19.2.1 to 19.2.2 in the commitlint group ([#48](https://github.com/flex-development/unist-util-visit/issues/48))
+- [[`32b51a0`](https://github.com/flex-development/unist-util-visit/commit/32b51a0d7987034ed7197fad915de78ab927673a)] **deps-dev:** Bump @commitlint/cli from 19.2.2 to 19.3.0 in the commitlint group ([#56](https://github.com/flex-development/unist-util-visit/issues/56))
+- [[`b1c98a2`](https://github.com/flex-development/unist-util-visit/commit/b1c98a251d976ee6edf81139724348775a5afa85)] **deps-dev:** Bump @flex-development/docast from 1.0.0-alpha.14 to 1.0.0-alpha.15 in the flex-development group ([#49](https://github.com/flex-development/unist-util-visit/issues/49))
+- [[`15676c9`](https://github.com/flex-development/unist-util-visit/commit/15676c9dd87141c6c09e170fb410c74ed8cc65f1)] **deps-dev:** Bump @flex-development/docast from 1.0.0-alpha.15 to 1.0.0-alpha.16 in the flex-development group ([#55](https://github.com/flex-development/unist-util-visit/issues/55))
+- [[`dafa265`](https://github.com/flex-development/unist-util-visit/commit/dafa265dbb9895760053986800b6f8eca6caafda)] **deps-dev:** bump @html-eslint/eslint-plugin from 0.24.0 to 0.24.1 ([#38](https://github.com/flex-development/unist-util-visit/issues/38))
+- [[`6ba5c51`](https://github.com/flex-development/unist-util-visit/commit/6ba5c5116c6b0b138f03cb977bdaa0e422dd58e4)] **deps-dev:** bump @html-eslint/parser from 0.24.0 to 0.24.1 ([#39](https://github.com/flex-development/unist-util-visit/issues/39))
+- [[`1708622`](https://github.com/flex-development/unist-util-visit/commit/170862227225813ba947f639501f0da1fb1fd26b)] **deps-dev:** Bump cspell from 8.6.0 to 8.6.1 ([#18](https://github.com/flex-development/unist-util-visit/issues/18))
+- [[`87a3ad6`](https://github.com/flex-development/unist-util-visit/commit/87a3ad6d62b02896df1396318a061562d1a085a5)] **deps-dev:** Bump cspell from 8.6.1 to 8.7.0 ([#42](https://github.com/flex-development/unist-util-visit/issues/42))
+- [[`c8c57c9`](https://github.com/flex-development/unist-util-visit/commit/c8c57c9561faf7972e097e6d77e6ffe4a6bb618c)] **deps-dev:** bump dprint from 0.45.0 to 0.45.1 ([#32](https://github.com/flex-development/unist-util-visit/issues/32))
+- [[`c0dad5e`](https://github.com/flex-development/unist-util-visit/commit/c0dad5e66a3824ebd5f3a3156cf4eb7896bdcfba)] **deps-dev:** Bump eslint-plugin-html from 8.0.0 to 8.1.0 ([#44](https://github.com/flex-development/unist-util-visit/issues/44))
+- [[`c00c31a`](https://github.com/flex-development/unist-util-visit/commit/c00c31acfe2a2cf382a0e21fade8ccd1ceed37d0)] **deps-dev:** Bump eslint-plugin-jsdoc from 48.2.1 to 48.2.2 ([#22](https://github.com/flex-development/unist-util-visit/issues/22))
+- [[`def423e`](https://github.com/flex-development/unist-util-visit/commit/def423e5d20877b306627e9002e79432eacf41e7)] **deps-dev:** bump eslint-plugin-jsdoc from 48.2.2 to 48.2.3 ([#33](https://github.com/flex-development/unist-util-visit/issues/33))
+- [[`d803b21`](https://github.com/flex-development/unist-util-visit/commit/d803b212761d08f537ae8c1ef83bad8d9b98a56a)] **deps-dev:** Bump eslint-plugin-jsonc from 2.14.1 to 2.15.0 ([#26](https://github.com/flex-development/unist-util-visit/issues/26))
+- [[`c816e9a`](https://github.com/flex-development/unist-util-visit/commit/c816e9a02db89aa5743fef3b0dd1f0f2097324ce)] **deps-dev:** Bump eslint-plugin-jsonc from 2.15.0 to 2.15.1 ([#47](https://github.com/flex-development/unist-util-visit/issues/47))
+- [[`6928b91`](https://github.com/flex-development/unist-util-visit/commit/6928b911099f6cc59d349f4421cec8d2b6cec9ea)] **deps-dev:** Bump eslint-plugin-unicorn from 51.0.1 to 52.0.0 ([#30](https://github.com/flex-development/unist-util-visit/issues/30))
+- [[`1861753`](https://github.com/flex-development/unist-util-visit/commit/186175379515cce38b81d862b64682a53e9f6b79)] **deps-dev:** Bump eslint-plugin-yml from 1.13.1 to 1.13.2 ([#16](https://github.com/flex-development/unist-util-visit/issues/16))
+- [[`8bcb359`](https://github.com/flex-development/unist-util-visit/commit/8bcb3594b339bebc2e1cc7294c2f7a541ecb3be3)] **deps-dev:** Bump eslint-plugin-yml from 1.13.2 to 1.14.0 ([#25](https://github.com/flex-development/unist-util-visit/issues/25))
+- [[`cbd092e`](https://github.com/flex-development/unist-util-visit/commit/cbd092e33cc77f61648ab2615cc70e9a9bf019c6)] **deps-dev:** Bump the typescript-eslint group with 2 updates ([#17](https://github.com/flex-development/unist-util-visit/issues/17))
+- [[`1ace5e7`](https://github.com/flex-development/unist-util-visit/commit/1ace5e75129901146ec20a15a68b41ca0e29b152)] **deps-dev:** Bump the typescript-eslint group with 2 updates ([#24](https://github.com/flex-development/unist-util-visit/issues/24))
+- [[`8a0c98e`](https://github.com/flex-development/unist-util-visit/commit/8a0c98eb8acb663ccc7fb4962b1013437514033a)] **deps-dev:** bump the typescript-eslint group with 2 updates ([#37](https://github.com/flex-development/unist-util-visit/issues/37))
+- [[`98ace66`](https://github.com/flex-development/unist-util-visit/commit/98ace66409a1738f5bede55f8cb86857942f0003)] **deps-dev:** Bump the typescript-eslint group with 2 updates ([#50](https://github.com/flex-development/unist-util-visit/issues/50))
+- [[`ad0c83f`](https://github.com/flex-development/unist-util-visit/commit/ad0c83f064a8a6ec77251003dac4b02d9045cd7c)] **deps-dev:** Bump the typescript-eslint group with 2 updates ([#58](https://github.com/flex-development/unist-util-visit/issues/58))
+- [[`f63a299`](https://github.com/flex-development/unist-util-visit/commit/f63a2994eb04451ad06f7d8614240ba26c56d048)] **deps-dev:** Bump the vitest group with 2 updates ([#46](https://github.com/flex-development/unist-util-visit/issues/46))
+- [[`12f9bce`](https://github.com/flex-development/unist-util-visit/commit/12f9bce133272d9f6097ac71fe475622867d0b74)] **deps-dev:** bump typescript from 5.4.2 to 5.4.5
+- [[`858493c`](https://github.com/flex-development/unist-util-visit/commit/858493c52cb420f6feb3f6a20d13e98cfe027e7c)] **deps:** bump @flex-development/unist-util-types from 1.2.0 to 1.3.1
+- [[`7c8b919`](https://github.com/flex-development/unist-util-visit/commit/7c8b919bae72004ca7485ea36ff85533a7a2c0a3)] **deps:** bump tar from 6.1.13 to 6.2.1 ([#40](https://github.com/flex-development/unist-util-visit/issues/40))
+- [[`fad2f6a`](https://github.com/flex-development/unist-util-visit/commit/fad2f6a8275120d4e887bddf7cc3a3552bebe5a5)] **deps:** Bump vite from 5.1.3 to 5.2.8 ([#27](https://github.com/flex-development/unist-util-visit/issues/27))
+
+### :robot: Continuous Integration
+
+- [[`00d53cd`](https://github.com/flex-development/unist-util-visit/commit/00d53cd5578b85bd6c228af3c920db8ea3ad4a76)] **deps:** Bump actions/add-to-project from 0.6.1 to 1.0.0 ([#20](https://github.com/flex-development/unist-util-visit/issues/20))
+- [[`7b17ddf`](https://github.com/flex-development/unist-util-visit/commit/7b17ddfc90516186fc3a7819148269949cb48050)] **deps:** Bump actions/add-to-project from 1.0.0 to 1.0.1 ([#45](https://github.com/flex-development/unist-util-visit/issues/45))
+- [[`fc79af3`](https://github.com/flex-development/unist-util-visit/commit/fc79af363519689bd898dc81ee4abdde37631637)] **deps:** Bump actions/checkout from 4.1.2 to 4.1.3 ([#53](https://github.com/flex-development/unist-util-visit/issues/53))
+- [[`4d87ff0`](https://github.com/flex-development/unist-util-visit/commit/4d87ff0f4ae482b6c9a8b3a52a3ae874092d7405)] **deps:** Bump actions/create-github-app-token from 1.9.0 to 1.9.1 ([#19](https://github.com/flex-development/unist-util-visit/issues/19))
+- [[`2ac0dbf`](https://github.com/flex-development/unist-util-visit/commit/2ac0dbfeb057aee8713198f29c11201fa1926c06)] **deps:** Bump actions/create-github-app-token from 1.9.1 to 1.9.2 ([#23](https://github.com/flex-development/unist-util-visit/issues/23))
+- [[`28a73d3`](https://github.com/flex-development/unist-util-visit/commit/28a73d3bbd5beb5186c5eca83aefc7af3f635978)] **deps:** bump actions/create-github-app-token from 1.9.2 to 1.9.3 ([#31](https://github.com/flex-development/unist-util-visit/issues/31))
+- [[`44f11ee`](https://github.com/flex-development/unist-util-visit/commit/44f11eed8f8aa9668a446eb165f3bb45223d05c9)] **deps:** Bump actions/upload-artifact from 4.3.1 to 4.3.2 ([#52](https://github.com/flex-development/unist-util-visit/issues/52))
+- [[`6588284`](https://github.com/flex-development/unist-util-visit/commit/6588284dfa07aaf0d1dc953c3939dba4ebcb3895)] **deps:** Bump actions/upload-artifact from 4.3.2 to 4.3.3 ([#59](https://github.com/flex-development/unist-util-visit/issues/59))
+- [[`1ff8a80`](https://github.com/flex-development/unist-util-visit/commit/1ff8a805e78e2309d804cecf0d2eff4f95d687da)] **deps:** Bump codecov/codecov-action from 4.1.0 to 4.1.1 ([#21](https://github.com/flex-development/unist-util-visit/issues/21))
+- [[`4e38488`](https://github.com/flex-development/unist-util-visit/commit/4e38488db61016ff5eed3fa43e11595b22521f62)] **deps:** Bump codecov/codecov-action from 4.1.1 to 4.2.0 ([#29](https://github.com/flex-development/unist-util-visit/issues/29))
+- [[`914c71d`](https://github.com/flex-development/unist-util-visit/commit/914c71d94f07e38094e2eb7ed8aaf6a00646bdf4)] **deps:** bump codecov/codecov-action from 4.2.0 to 4.3.0 ([#41](https://github.com/flex-development/unist-util-visit/issues/41))
+- [[`20646a5`](https://github.com/flex-development/unist-util-visit/commit/20646a56a8350ac0ba120d111000f729a22ff700)] **deps:** Bump octokit/graphql-action from 2.2.25 to 2.3.0 ([#28](https://github.com/flex-development/unist-util-visit/issues/28))
+- [[`efd92ba`](https://github.com/flex-development/unist-util-visit/commit/efd92ba9fa3bd38ffb8a2b7021f9907541258f88)] **deps:** Bump octokit/graphql-action from 2.3.0 to 2.3.1 ([#51](https://github.com/flex-development/unist-util-visit/issues/51))
+- [[`1a48099`](https://github.com/flex-development/unist-util-visit/commit/1a48099128652f13cd94ba62ad89c5ee1498b057)] **workflows:** [`lock-inactive-threads`] use bot token
+
+### :house_with_garden: Housekeeping
+
+- [[`6af633b`](https://github.com/flex-development/unist-util-visit/commit/6af633b3e0b858f6f587c1bfb9547fed98b9d97e)] **github:** [codecov] update ignore list
+
 ## 1.0.0 (2024-03-20)
 
 ### :package: Build
@@ -42,5 +96,6 @@
 ### :house_with_garden: Housekeeping
 
 - [[`e8e2f13`](https://github.com/flex-development/unist-util-visit/commit/e8e2f139b94fb3444ca5e8c51ebad9074a142ba8)] initial commit
+
 
 
