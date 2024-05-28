@@ -1944,7 +1944,7 @@ __metadata:
     vfile: "npm:6.0.1"
     vite-tsconfig-paths: "npm:4.3.2"
     vitest: "npm:1.6.0"
-    yaml-eslint-parser: "npm:1.2.2"
+    yaml-eslint-parser: "npm:1.2.3"
   peerDependencies:
     "@types/unist": ">=3.0.2"
   peerDependenciesMeta:
@@ -10843,7 +10843,18 @@ __metadata:
   languageName: node
   linkType: hard
 
-"yaml-eslint-parser@npm:1.2.2, yaml-eslint-parser@npm:^1.2.1":
+"yaml-eslint-parser@npm:1.2.3":
+  version: 1.2.3
+  resolution: "yaml-eslint-parser@npm:1.2.3"
+  dependencies:
+    eslint-visitor-keys: "npm:^3.0.0"
+    lodash: "npm:^4.17.21"
+    yaml: "npm:^2.0.0"
+  checksum: 10/b936470882a38457333591cbecae5ace8e3cdb92cf0754a51429230e5a1fc56f90a8433341474ed8961125fd81047ee57fa3eb053dcd94cde76c8ae35cb58add
+  languageName: node
+  linkType: hard
+
+"yaml-eslint-parser@npm:^1.2.1":
   version: 1.2.2
   resolution: "yaml-eslint-parser@npm:1.2.2"
   dependencies:
