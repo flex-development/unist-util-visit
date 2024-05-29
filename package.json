@@ -87,7 +87,7 @@
   },
   "dependencies": {
     "@flex-development/tutils": "6.0.0-alpha.25",
-    "@flex-development/unist-util-types": "1.4.0",
+    "@flex-development/unist-util-types": "1.6.0",
     "unist-util-is": "6.0.0"
   },
   "devDependencies": {
