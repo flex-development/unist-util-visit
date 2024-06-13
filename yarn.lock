@@ -1908,7 +1908,7 @@ __metadata:
     eslint: "npm:8.57.0"
     eslint-import-resolver-typescript: "npm:3.6.1"
     eslint-mdx: "npm:3.1.5"
-    eslint-plugin-chai-expect: "npm:3.0.0"
+    eslint-plugin-chai-expect: "npm:3.1.0"
     eslint-plugin-html: "npm:8.1.1"
     eslint-plugin-import: "npm:2.29.1"
     eslint-plugin-jest-formatting: "npm:3.1.0"
@@ -4810,12 +4810,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-chai-expect@npm:3.0.0":
-  version: 3.0.0
-  resolution: "eslint-plugin-chai-expect@npm:3.0.0"
+"eslint-plugin-chai-expect@npm:3.1.0":
+  version: 3.1.0
+  resolution: "eslint-plugin-chai-expect@npm:3.1.0"
   peerDependencies:
-    eslint: ">=2.0.0 <= 8.x"
-  checksum: 10/8461455f11fd0638cf7fe555922ee528c4560409d50a293d5d8a5bec8c0e45748fba00ac0fad68980bdcb65da59b8c0f5db0942115b94a8ecde864d29a1631d5
+    eslint: ">=2.0.0 <= 9.x"
+  checksum: 10/fc6250a8407b5c35eda5c02fcd830994cbdede2da2d4da2d058b5f3f03df4bc500ab30d3638737b10dfa338109c3a963438ae89426a5bb88224870a018ed30a4
   languageName: node
   linkType: hard
 
