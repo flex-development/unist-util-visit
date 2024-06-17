@@ -1857,12 +1857,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@flex-development/unist-util-types@npm:1.6.0":
-  version: 1.6.0
-  resolution: "@flex-development/unist-util-types@npm:1.6.0::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40flex-development%2Funist-util-types%2F1.6.0%2F4e40cc3dadce847a603efae356dca9da4af17bdb"
-  peerDependencies:
-    "@types/unist": ">=3.0.2"
-  checksum: 10/cdbf97ecb7a24f36e427b531042fee85704cbfa613aaf0146a8633ad48244072d6c66de5aa23d472dd4216c74174cfbb25f46a5b27f937a6913cee03c7da0f31
+"@flex-development/unist-util-types@npm:1.6.1":
+  version: 1.6.1
+  resolution: "@flex-development/unist-util-types@npm:1.6.1::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40flex-development%2Funist-util-types%2F1.6.1%2F0deabf0a30d32dc9ae23aea394ef67b8f0b806b9"
+  dependencies:
+    "@types/unist": "npm:3.0.2"
+  checksum: 10/fd308bb9673987b588d54afc56821fefaad9233fecf8d76f352a055c339716979f3c2e1b2d145628ffa0d9ac033fbe28d942294a029d98b52334dd9703471f99
   languageName: node
   linkType: hard
 
@@ -1883,7 +1883,7 @@ __metadata:
     "@flex-development/mlly": "npm:1.0.0-alpha.18"
     "@flex-development/pathe": "npm:2.0.0"
     "@flex-development/tutils": "npm:6.0.0-alpha.25"
-    "@flex-development/unist-util-types": "npm:1.6.0"
+    "@flex-development/unist-util-types": "npm:1.6.1"
     "@html-eslint/eslint-plugin": "npm:0.24.1"
     "@html-eslint/parser": "npm:0.24.1"
     "@types/chai": "npm:4.3.13"
