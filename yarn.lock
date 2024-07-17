@@ -10350,21 +10350,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"unist-util-inspect@npm:8.1.0":
+"unist-util-inspect@npm:8.1.0, unist-util-inspect@npm:^8.0.0":
   version: 8.1.0
   resolution: "unist-util-inspect@npm:8.1.0"
   dependencies:
     "@types/unist": "npm:^3.0.0"
   checksum: 10/f1d14b2fdf184b08de55e215b67ccce9be59b81ccb72b01295538b1642b2087f093b6e98bd830727dd5d69074dcdce3c471469a2ec8bd0aa4063b1270b23e86f
-  languageName: node
-  linkType: hard
-
-"unist-util-inspect@npm:^8.0.0":
-  version: 8.0.0
-  resolution: "unist-util-inspect@npm:8.0.0"
-  dependencies:
-    "@types/unist": "npm:^3.0.0"
-  checksum: 10/6d49bbda767a44e28f55de472fd05368e7916fc534484364d59f6c403ed0911789cdd70936098f6a45d5ac55a21a96ac302c8bd1cb909bec50d56703e33cf0a5
   languageName: node
   linkType: hard
 
