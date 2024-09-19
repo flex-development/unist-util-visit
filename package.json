@@ -92,8 +92,8 @@
   },
   "devDependencies": {
     "@arethetypeswrong/cli": "0.15.3",
-    "@commitlint/cli": "19.3.0",
-    "@commitlint/types": "19.0.3",
+    "@commitlint/cli": "19.5.0",
+    "@commitlint/types": "19.5.0",
     "@flex-development/commitlint-config": "1.0.1",
     "@flex-development/decorator-regex": "2.0.0",
     "@flex-development/docast": "1.0.0-alpha.17",
