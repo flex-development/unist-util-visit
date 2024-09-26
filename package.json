@@ -137,7 +137,7 @@
     "eslint-plugin-markdownlint": "0.6.0",
     "eslint-plugin-mdx": "3.1.5",
     "eslint-plugin-node": "11.1.0",
-    "eslint-plugin-promise": "7.0.0",
+    "eslint-plugin-promise": "7.1.0",
     "eslint-plugin-unicorn": "54.0.0",
     "eslint-plugin-yml": "1.14.0",
     "growl": "1.10.5",
